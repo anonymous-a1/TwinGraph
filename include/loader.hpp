@@ -156,7 +156,7 @@ struct loader{
         graph_file.write((char *)&index.del_vertex_, sizeof(size_t));
         graph_file.write((char *)index.available_tags_.data(), index.cur_vertex_ * sizeof(bool));
         
-        graph_file.write((char *)index.knn_pool_.get(), index.cur_vertex_ * index.knn_pool_.sizeRow); /////
+        graph_file.write((char *)index.knn_pool_.get(), index.cur_vertex_ * index.knn_pool_.sizeRow);
         graph_file.close();
 
         std::cout << "Successfully saved index in directory " << out_dir << std::endl;
@@ -196,7 +196,7 @@ struct loader{
         graph_file.read((char *)&index.del_vertex_, sizeof(size_t));
         graph_file.read((char *)index.available_tags_.data(), cur_vertex * sizeof(bool));
         auto dists_data = new typename Index_t::edge_t[max_vertex * index.K_];
-        graph_file.read((char *)dists_data, cur_vertex * index.K_ * sizeof(typename Index_t::edge_t)); ////
+        graph_file.read((char *)dists_data, cur_vertex * index.K_ * sizeof(typename Index_t::edge_t));
         index.knn_pool_.realloc(max_vertex, index.K_, index.K_ * sizeof(typename Index_t::edge_t), dists_data);
         graph_file.close();
 

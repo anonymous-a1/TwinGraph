@@ -43,7 +43,7 @@ struct AlignedMemoryManager{
     size_t dim{0};
     size_t sizeRow{0};
     int prefetch_size{0};
-    char * data{nullptr};   // for faster access
+    char * data{nullptr}; 
 
     AlignedMemoryManager() = default;
     AlignedMemoryManager(size_t N0, size_t dim0, size_t size_per_row0 = 0, void * mass0 = nullptr){

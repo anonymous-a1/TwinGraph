@@ -33,8 +33,6 @@ void test(Paths & p, int k, float expand, int niter, int nthreads){
     vector<float> recalls(efs.size());
     vector<float> Hops(efs.size(), std::numeric_limits<float>::max());
 
-    // index->test();
-
     for(int it = 0; it < niter; it++) {
         #if defined DEBUG_VERBOSE
             cout << "------------------------------\n" 
